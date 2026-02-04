@@ -35,7 +35,7 @@ setuptools.setup(
     'tensorflowjs<3.19',
     'crepe<0.0.13',
     'note-seq<0.0.4',
-    'ddsp==3.2.0',
+    'ddsp>=3.2.0',
     'pretty_midi',
     'music21',
     'pandas',
