@@ -258,7 +258,7 @@ if __name__ == '__main__':
   scheduler = tf.keras.optimizers.schedules.ExponentialDecay(
     initial_learning_rate=hp.lr, decay_steps=1000,
     decay_rate=0.99)
-  optimizer = tf.keras.optimizers.Adam(learning_rate=scheduler)
+  optimizer = tf.keras.optimizers.legacy.Adam(learning_rate=scheduler)
 
   loss_helper = ReconLossHelper(hp)
   gan_loss_helper = GANLossHelper(lambda_recon=hp.lambda_recon,
