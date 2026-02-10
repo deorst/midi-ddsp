@@ -350,7 +350,7 @@ def make_and_save_pickles(data_dir, split, pickle_output_dir,
               os.path.join(pickle_output_dir, f'{split}_audio_all.pickle'))
 
 
-def dump_expression_generator_dataset(model, data_dir, output_dir):
+def dump_expression_generator_dataset(model, data_dir, output_dir, instrument_key='all'):
   # TODO: (yusongwu) add automatic note expression scaling
 
   synth_params_output_dir = os.path.join(output_dir, 'synth_params')
@@ -359,11 +359,11 @@ def dump_expression_generator_dataset(model, data_dir, output_dir):
   os.makedirs(pickle_output_dir, exist_ok=True)
   os.makedirs(stats_plot_output_dir, exist_ok=True)
 
-  test_data_loader = UrmpMidiUnsegmented(data_dir, instrument_key='all',
+  test_data_loader = UrmpMidiUnsegmented(data_dir, instrument_key=instrument_key,
                                        split='test', suffix='unbatched')
   test_dataset = test_data_loader.get_batch(batch_size=1, shuffle=True,
                                             repeats=1)
-  train_data_loader = UrmpMidiUnsegmented(data_dir, instrument_key='all',
+  train_data_loader = UrmpMidiUnsegmented(data_dir, instrument_key=instrument_key,
                                         split='train', suffix='unbatched')
   train_dataset = train_data_loader.get_batch(batch_size=1, shuffle=True,
                                               repeats=1)

@@ -39,6 +39,10 @@ def main():
                       default=None,
                       help='The output directory for dumping the expression '
                            'generator dataset.')
+  parser.add_argument('--instrument', type=str, 
+                      default=hp.instrument,
+                      help='The instrument to train on for single instrument '
+                           'setting.')
   # TODO: (yusongwu) add automatic note expression scaling
   args = parser.parse_args()
   model_path = args.model_path
@@ -51,7 +55,7 @@ def main():
 
   print('Creating dataset for expression generator!')
   dump_expression_generator_dataset(model, data_dir=args.data_dir,
-                                    output_dir=args.output_dir)
+                                    output_dir=args.output_dir, instrument_key=args.instrument)
 
 
 if __name__ == '__main__':
