@@ -48,6 +48,8 @@ SAMPLE_RATE = 16000
 def load_pretrained_model(synthesis_generator_path=None,
                           expression_generator_path=None):
   """Load pre-trained model weights."""
+  print('load_pretrained_model: synthesis_generator_path', synthesis_generator_path)
+  print('load_pretrained_model: expression_generator_path', expression_generator_path)
   package_dir = os.path.dirname(os.path.realpath(__file__))
 
   if not os.path.exists(os.path.join(package_dir,
