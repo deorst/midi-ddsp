@@ -145,7 +145,7 @@ if __name__ == '__main__':
     initial_learning_rate=1e-4,
     decay_steps=1000,
     decay_rate=0.99)
-  optimizer = tf.keras.optimizers.Adam(learning_rate=scheduler)
+  optimizer = tf.keras.optimizers.legacy.Adam(learning_rate=scheduler)
   metrics = tf.keras.metrics.Mean(name='mean_loss')
 
   if restore_path:
