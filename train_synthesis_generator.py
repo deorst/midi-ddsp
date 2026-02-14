@@ -133,7 +133,6 @@ def train(training_data, training_steps, start_step=1):
     # DDSP Inference training finished.
     # Start training Synthesis Generator and
     # dump dataset for expression generator.
-    print(f'start_step: {start_step}, step: {step}')
     if step == hp.synth_coder_training_steps:
       hp.run_synth_coder_only = False
       if not hp.add_synth_loss:
